@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        fedora_version: [43, 44]
+        fedora_version: [44, 45]
     steps:
       - uses: actions/checkout@v6
       - run: "docker run --rm -v ./:/repo fedora:${{ matrix.fedora_version }} /bin/bash /repo/packaging/fedora/build.sh ${{ matrix.fedora_version }}"
